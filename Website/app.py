@@ -368,7 +368,7 @@ def start_liveness():
         camera = None
     
     # Start with a fresh camera
-    camera = cv2.VideoCapture(1)  # Try camera index 0 first
+    camera = cv2.VideoCapture(0)  # Try camera index 0 first
     
     if not camera.isOpened():
         camera = cv2.VideoCapture(1)  # If 0 doesn't work, try index 1
