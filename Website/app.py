@@ -368,10 +368,10 @@ def start_liveness():
         camera = None
     
     # Start with a fresh camera
-    camera = cv2.VideoCapture(0)  # Try camera index 0 first
+    camera = cv2.VideoCapture(1)  # Try camera index 1 first
     
     if not camera.isOpened():
-        camera = cv2.VideoCapture(1)  # If 0 doesn't work, try index 1
+        camera = cv2.VideoCapture(0)  # Fallback to index 0 if 1 doesn't work
         
     if not camera.isOpened():
         return jsonify({'status': 'error', 'message': 'Could not open webcam'})

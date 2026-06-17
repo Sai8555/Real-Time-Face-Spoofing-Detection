@@ -16,10 +16,10 @@ except Exception as e:
 # Threshold for classification
 threshold = 0.8  # Adjust based on your model performance
 
-# Open the webcam (Try index 0 first, fallback to 1)
-cap = cv2.VideoCapture(0)
+# Open the webcam (Try index 1 first, fallback to 0)
+cap = cv2.VideoCapture(1)
 if not cap.isOpened():
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()
