@@ -90,12 +90,32 @@ python Face_liveness/run.py
 *Press `q` to exit the live camera feed.*
 
 ### 3️⃣ Run the Interactive Flask Web Application
-For the full interactive web experience:
 ```bash
 cd Website
 python app.py
 ```
 Then, open your browser and go to: `http://127.0.0.1:5000`
+
+---
+
+## 🌐 Deploying Live to the Web
+
+Since this is a Python Flask backend application that loads a TensorFlow machine learning model, it cannot be hosted directly using static hosting services like **GitHub Pages** (which only support static HTML/CSS/JS with no backend execution).
+
+However, you can easily host this project live for free by linking your GitHub repository to a cloud platform like **Render** or **Railway**:
+
+### How to Deploy on Render (Free Tier):
+1. Create a free account on **[Render.com](https://render.com/)**.
+2. Click **New +** and select **Web Service**.
+3. Connect your GitHub account and select your **`Real-Time-Face-Spoofing-Detection`** repository.
+4. Set the following configuration details:
+   - **Name**: `face-spoofing-detection`
+   - **Environment**: `Python 3`
+   - **Region**: Choose the closest region (e.g., Oregon or Singapore)
+   - **Branch**: `main`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn Website.app:app` (or `python Website/app.py` for direct dev execution)
+5. Click **Deploy Web Service**. Render will automatically pull the code, install dependencies, load the TensorFlow model, and give you a public URL (e.g. `https://face-spoofing-detection.onrender.com`)!
 
 ---
 
