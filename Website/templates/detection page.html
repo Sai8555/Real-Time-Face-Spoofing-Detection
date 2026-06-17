@@ -50,9 +50,196 @@
       rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
+    <style>
+      body {
+        background-color: #0b0c10 !important;
+        color: #c5c6c7 !important;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .navbar8-navbar-interactive {
+        background: rgba(11, 12, 16, 0.8) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .navbar8-links1 a, .navbar8-links1 span {
+        color: #c5c6c7 !important;
+      }
+      
+      .navbar8-links1 a:hover {
+        color: #66fcf1 !important;
+      }
+      
+      .hero17-header78 {
+        background: radial-gradient(circle at 50% 30%, #1f2833 0%, #0b0c10 80%) !important;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+      }
+      
+      .hero17-text1 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+        font-weight: 800 !important;
+        letter-spacing: -0.5px;
+      }
+      
+      .hero17-text2 {
+        color: #c5c6c7 !important;
+        font-size: 1.1rem !important;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 15px !important;
+        color: #45f3ff;
+      }
+      
+      #status-text {
+        background: rgba(69, 243, 255, 0.1);
+        color: #45f3ff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(69, 243, 255, 0.3);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        display: inline-block;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(69, 243, 255, 0.4); }
+        70% { box-shadow: 0 0 0 8px rgba(69, 243, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(69, 243, 255, 0); }
+      }
+
+      .box {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 2px solid rgba(102, 252, 241, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(102, 252, 241, 0.1);
+        transition: all 0.3s ease;
+        background: #000;
+        margin: 20px 0;
+      }
+
+      .box:hover {
+        border-color: #66fcf1;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(102, 252, 241, 0.25);
+      }
+
+      /* Futuristic Scanning Line Overlay */
+      .box::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, transparent, #66fcf1, transparent);
+        animation: scan 3s linear infinite;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      @keyframes scan {
+        0% { top: 0%; }
+        50% { top: 100%; }
+        100% { top: 0%; }
+      }
+
+      #camera-feed {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      .camera-controls {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      #start-liveness-btn, #stop-liveness-btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      #start-liveness-btn {
+        background: #66fcf1;
+        color: #0b0c10;
+        border: none;
+        box-shadow: 0 4px 15px rgba(102, 252, 241, 0.3);
+      }
+
+      #start-liveness-btn:hover:not(:disabled) {
+        background: #45f3ff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 252, 241, 0.5);
+      }
+
+      #stop-liveness-btn {
+        background: transparent;
+        color: #ff4d4d;
+        border: 2px solid #ff4d4d;
+      }
+
+      #stop-liveness-btn:hover:not(:disabled) {
+        background: rgba(255, 77, 77, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(255, 77, 77, 0.2);
+      }
+
+      #start-liveness-btn:disabled, #stop-liveness-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Floating Developer Credit Badge */
+      .dev-badge {
+        margin-top: 30px;
+        padding: 12px 20px;
+        background: rgba(31, 40, 51, 0.6);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        text-align: center;
+        max-width: 400px;
+      }
+
+      .dev-badge span {
+        font-size: 0.85rem;
+        color: #858688;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .dev-badge strong {
+        font-size: 1rem;
+        color: #ffffff;
+        display: block;
+      }
+    </style>
+    <title>Real-Time Face Spoofing Detection System</title>
   </head>
-    <title>Document</title>
-</head>
 <body>
     <!-- <link rel="stylesheet" href="./style.css" /> -->
     <!-- <link rel="stylesheet" href="./static/css/style.css"> -->
@@ -224,7 +411,11 @@
                       <button id="stop-liveness-btn" class="thq-button-animated thq-button-outline" disabled>
                           Stop Liveness Testing
                       </button>
-                  </div>
+                    </div>
+                    <div class="dev-badge">
+                      <span>Project Lead & Developer</span>
+                      <strong>Janapareddy Giri Sai Durga (Regd No: 21U41A4218)</strong>
+                    </div>
                   </div>
                 </div>
             </hero17-wrapper>
