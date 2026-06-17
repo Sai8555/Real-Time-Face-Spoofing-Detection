@@ -211,31 +211,18 @@
         box-shadow: none;
       }
 
-      /* Floating Developer Credit Badge */
-      .dev-badge {
-        margin-top: 30px;
-        padding: 12px 20px;
-        background: rgba(31, 40, 51, 0.6);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(5px);
-        text-align: center;
-        max-width: 400px;
+      /* Header & Footer wrappers dark overrides */
+      [class*="navbar8-wrapper"], [class*="navbar8-container"], [class*="footer4-wrapper"], [class*="footer4-container"], .head {
+        background-color: #0b0c10 !important;
+        background: #0b0c10 !important;
       }
 
-      .dev-badge span {
-        font-size: 0.85rem;
-        color: #858688;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      .dev-badge strong {
-        font-size: 1rem;
-        color: #ffffff;
-        display: block;
+      /* Hide TeleportHQ Brand Badge */
+      div[class*="teleport"], a[href*="teleporthq.io"], [class*="teleport-hq-badge"], #teleport-hq-badge, .teleport-hq-badge, .teleport-hq-badge-anchor {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
       }
     </style>
     <title>Real-Time Face Spoofing Detection System</title>
@@ -411,10 +398,6 @@
                       <button id="stop-liveness-btn" class="thq-button-animated thq-button-outline" disabled>
                           Stop Liveness Testing
                       </button>
-                    </div>
-                    <div class="dev-badge">
-                      <span>Project Lead & Developer</span>
-                      <strong>Janapareddy Giri Sai Durga (Regd No: 21U41A4218)</strong>
                     </div>
                   </div>
                 </div>
